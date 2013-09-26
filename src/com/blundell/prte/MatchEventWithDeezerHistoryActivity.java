@@ -4,10 +4,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.blundell.prte.stuff.DeezerHistoryParser;
+import com.blundell.prte.stuff.Song;
 import com.deezer.sdk.*;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.List;
 
 public class MatchEventWithDeezerHistoryActivity extends PrteActivity {
 
@@ -25,6 +28,11 @@ public class MatchEventWithDeezerHistoryActivity extends PrteActivity {
             public void onComplete(String response, Object requestId) {
                 popToastOnUiThread("COMPLETE");
                 Log.d("MatchEvent", response);
+
+                List<Song> songs = new DeezerHistoryParser().parse(response);
+                for (Song song : songs) {
+                    Log.d("MatchEvent", song.toString());
+                }
             }
 
             @Override
