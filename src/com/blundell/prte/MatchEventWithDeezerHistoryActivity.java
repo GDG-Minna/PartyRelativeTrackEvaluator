@@ -5,7 +5,9 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.blundell.prte.stuff.DeezerHistoryParser;
+import com.blundell.prte.stuff.Event;
 import com.blundell.prte.stuff.Song;
+import com.blundell.prte.stuff.SongToEventMatcher;
 import com.deezer.sdk.*;
 import com.parse.ParseUser;
 
@@ -30,10 +32,11 @@ public class MatchEventWithDeezerHistoryActivity extends PrteActivity {
             @Override
             public void onComplete(String response, Object requestId) {
                 popToastOnUiThread("COMPLETE");
-                Log.d("MatchEvent", response);
+//                Log.d("MatchEvent", response);
 
                 List<Song> songs = new DeezerHistoryParser().parse(response);
-                for (Song song : songs) {
+                List<Song> matchedSongs = new SongToEventMatcher(songs).matchOn(new Event());
+                for (Song song : matchedSongs) {
                     Log.d("MatchEvent", song.toString());
                 }
             }
