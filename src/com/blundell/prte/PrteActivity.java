@@ -1,12 +1,15 @@
 package com.blundell.prte;
 
+import android.app.Activity;
 import android.os.Bundle;
 
-public class SignUpWithFacebookActiivty extends PrteActivity {
+import com.parse.ParseAnalytics;
+
+public class PrteActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up_with_facebook);
+        ParseAnalytics.trackAppOpened(getIntent());
     }
 }
