@@ -4,4 +4,6 @@
   <string name="app_id">1401585226737944</string>
   <string name="label_login">Facebook Login</string>
   <string name="label_main">Main</string>
+  <string name="label_event_select">Event Select</string>
+  <string name="label_deezer_login">Deezer Login</string>
 </resources>

@@ -25,6 +25,8 @@ public class EventResponseParser {
                 String endTime = jsonObject.getString("end_time");
 
                 events.add(new Event().setName(name).setId(id).setStartTime(startTime).setEndTime(endTime));
+
+//                Intent intent = new Intent(EventResponseParser.this, MatchDeezerPlaylistActivity.class);
             }
 
         } catch (JSONException e) {
