@@ -2,4 +2,6 @@
 <resources>
   <string name="app_name">PartyRelativeTrackEvaluator</string>
   <string name="app_id">1401585226737944</string>
+  <string name="label_login">Facebook Login</string>
+  <string name="label_main">Main</string>
 </resources>
