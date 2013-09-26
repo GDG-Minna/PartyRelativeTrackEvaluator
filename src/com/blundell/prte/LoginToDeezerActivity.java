@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.deezer.sdk.*;
-import com.parse.ParseException;
 import com.parse.ParseUser;
 
 public class LoginToDeezerActivity extends PrteActivity {
@@ -45,13 +44,7 @@ public class LoginToDeezerActivity extends PrteActivity {
                 return;
             }
             currentUser.put("DEEZER_ACCESS_TOKEN", access_token);
-            try {
-                currentUser.save();
-            } catch (ParseException e) {
-                e.printStackTrace();
-                Toast.makeText(LoginToDeezerActivity.this, "Fail", 0).show();
-                return;
-            }
+            currentUser.saveInBackground();
             Toast.makeText(LoginToDeezerActivity.this, "SUCCESS", 0).show();
 
         }//met

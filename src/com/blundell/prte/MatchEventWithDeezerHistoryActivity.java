@@ -1,5 +1,6 @@
 package com.blundell.prte;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -35,10 +36,14 @@ public class MatchEventWithDeezerHistoryActivity extends PrteActivity {
 //                Log.d("MatchEvent", response);
 
                 List<Song> songs = new DeezerHistoryParser().parse(response);
-                List<Song> matchedSongs = new SongToEventMatcher(songs).matchOn(new Event());
+                Event selectedEvent = (Event) ParseUser.getCurrentUser().get("SELECTED_EVENT");
+                List<Song> matchedSongs = new SongToEventMatcher(songs).matchOn(selectedEvent);
                 for (Song song : matchedSongs) {
                     Log.d("MatchEvent", song.toString());
                 }
+
+                Intent intent = new Intent(MatchEventWithDeezerHistoryActivity.this, FindFacebookUsersForEventActivity.class);
+                startActivity(intent);
             }
 
             @Override

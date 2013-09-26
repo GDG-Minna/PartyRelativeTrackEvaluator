@@ -13,7 +13,10 @@ import com.blundell.prte.stuff.Event;
 import com.blundell.prte.stuff.EventResponseParser;
 import com.facebook.Request;
 import com.facebook.Response;
+import com.parse.ParseException;
 import com.parse.ParseFacebookUtils;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.util.List;
 
@@ -47,8 +50,17 @@ public class FacebookEventSelectActivity extends PrteActivity {
                         Event event = events.get(position);
                         Toast.makeText(getApplicationContext(), event.getId() + " You Clicked " + event.getName(), 0).show();
 
-                        Intent intent = new Intent(FacebookEventSelectActivity.this, MatchEventWithDeezerHistoryActivity.class);
-                        startActivity(intent);
+                        ParseUser currentUser = ParseUser.getCurrentUser();
+                        currentUser.put("SELECTED_EVENT", event);
+                        currentUser.saveInBackground(new SaveCallback() {
+                            @Override
+                            public void done(ParseException e) {
+                                Intent intent = new Intent(FacebookEventSelectActivity.this, MatchEventWithDeezerHistoryActivity.class);
+                                startActivity(intent);
+
+                            }
+                        });
+
                     }
                 });
 
