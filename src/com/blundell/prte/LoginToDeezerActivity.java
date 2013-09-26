@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.deezer.sdk.*;
+import com.parse.ParseException;
+import com.parse.ParseUser;
 
 public class LoginToDeezerActivity extends PrteActivity {
 
@@ -21,8 +23,6 @@ public class LoginToDeezerActivity extends PrteActivity {
      */
     private DeezerConnect deezerConnect = new DeezerConnectImpl(APP_ID);
 
-    static String access_token;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +37,22 @@ public class LoginToDeezerActivity extends PrteActivity {
     private class MyDialogHandler implements DialogListener {
         @Override
         public void onComplete(final Bundle values) {
+            String access_token = (String) values.get("access_token");
+
+            ParseUser currentUser = ParseUser.getCurrentUser();
+            if (currentUser == null) {
+                Toast.makeText(LoginToDeezerActivity.this, "Login with Facebook first", 1).show();
+                return;
+            }
+            currentUser.put("DEEZER_ACCESS_TOKEN", access_token);
+            try {
+                currentUser.save();
+            } catch (ParseException e) {
+                e.printStackTrace();
+                Toast.makeText(LoginToDeezerActivity.this, "Fail", 0).show();
+                return;
+            }
             Toast.makeText(LoginToDeezerActivity.this, "SUCCESS", 0).show();
-            access_token = (String) values.get("access_token");
 
         }//met
 

@@ -7,6 +7,7 @@ import android.widget.Toast;
 import com.blundell.prte.stuff.DeezerHistoryParser;
 import com.blundell.prte.stuff.Song;
 import com.deezer.sdk.*;
+import com.parse.ParseUser;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -22,7 +23,9 @@ public class MatchEventWithDeezerHistoryActivity extends PrteActivity {
         DeezerRequest deezerRequest = new DeezerRequest("user/340003261/history");
 
         DeezerConnect deezerConnect = new DeezerConnectImpl(this, LoginToDeezerActivity.APP_ID);
-        deezerConnect.setAccessToken(this, LoginToDeezerActivity.access_token);
+        String deezer_access_token = ParseUser.getCurrentUser().getString("DEEZER_ACCESS_TOKEN");
+        Log.d("MatchEvent", "Access: " + deezer_access_token);
+        deezerConnect.setAccessToken(this, deezer_access_token);
         deezerConnect.requestAsync(deezerRequest, new RequestListener() {
             @Override
             public void onComplete(String response, Object requestId) {
