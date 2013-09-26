@@ -5,6 +5,7 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.blundell.prte.stuff.Event;
 import com.blundell.prte.stuff.EventResponseParser;
 import com.facebook.Request;
 import com.facebook.Response;
@@ -27,9 +28,9 @@ public class FacebookEventSelectActivity extends PrteActivity {
 
                 ListView listView = (ListView) findViewById(R.id.select_list);
 
-                List<String> events = new EventResponseParser().parse(response);
+                List<Event> events = new EventResponseParser().parse(response);
                 listView.setAdapter(
-                        new ArrayAdapter<String>(
+                        new ArrayAdapter<Event>(
                                 FacebookEventSelectActivity.this,
                                 android.R.layout.simple_list_item_1,
                                 android.R.id.text1,

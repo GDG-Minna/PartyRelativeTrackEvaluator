@@ -11,8 +11,8 @@ import org.json.JSONObject;
 
 public class EventResponseParser {
 
-    public List<String> parse(Response response) {
-        List<String> events = new ArrayList<String>();
+    public List<Event> parse(Response response) {
+        List<Event> events = new ArrayList<Event>();
         try {
             JSONArray data = response.getGraphObject().getInnerJSONObject().getJSONArray("data");
 
@@ -21,12 +21,12 @@ public class EventResponseParser {
 
                 String name = jsonObject.getString("name");
 
-                events.add(name);
+                events.add(new Event().setName(name));
             }
 
         } catch (JSONException e) {
             e.printStackTrace();
-            events.add("PARSE FAIL");
+            events.add(new Event().setName("PARSE FAIL"));
         }
         return events;
     }
