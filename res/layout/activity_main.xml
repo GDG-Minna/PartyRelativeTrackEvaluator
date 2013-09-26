@@ -25,6 +25,12 @@
   <Button
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    android:text="Sign In to Withings"
+    android:onClick="onSignInWithWithingsClick" />
+
+  <Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
     android:text="Select your event"
     android:onClick="onSelectFacebookEventClick" />
 

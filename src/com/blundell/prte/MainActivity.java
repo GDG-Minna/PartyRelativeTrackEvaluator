@@ -32,6 +32,11 @@ public class MainActivity extends PrteActivity {
         startActivity(intent);
     }
 
+    public void onSignInWithWithingsClick(View button) {
+        Intent intent = new Intent(this, LoginToWithingsActivity.class);
+        startActivity(intent);
+    }
+
     public void onSelectFacebookEventClick(View button) {
         Intent intent = new Intent(this, FacebookEventSelectActivity.class);
         startActivity(intent);

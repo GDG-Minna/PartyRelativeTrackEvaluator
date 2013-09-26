@@ -42,6 +42,10 @@
       android:name=".MatchEventWithDeezerHistoryActivity" />
 
     <activity
+      android:label="@string/label_login_withings"
+      android:name=".LoginToWithingsActivity" />
+
+    <activity
       android:label="@string/label_find"
       android:name=".FindFacebookUsersForEventActivity" />
 
