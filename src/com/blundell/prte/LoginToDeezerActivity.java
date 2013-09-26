@@ -21,6 +21,8 @@ public class LoginToDeezerActivity extends PrteActivity {
      */
     private DeezerConnect deezerConnect = new DeezerConnectImpl(APP_ID);
 
+    static String access_token;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,31 +37,32 @@ public class LoginToDeezerActivity extends PrteActivity {
     private class MyDialogHandler implements DialogListener {
         @Override
         public void onComplete(final Bundle values) {
-            Toast.makeText(LoginToDeezerActivity.this, "SUCCESS", 1).show();
+            Toast.makeText(LoginToDeezerActivity.this, "SUCCESS", 0).show();
+            access_token = (String) values.get("access_token");
 
         }//met
 
         @Override
         public void onDeezerError(final DeezerError deezerError) {
-            Toast.makeText(LoginToDeezerActivity.this, "deezer error", 1).show();
+            Toast.makeText(LoginToDeezerActivity.this, "deezer error", 0).show();
 
         }//met
 
         @Override
         public void onError(final DialogError dialogError) {
-            Toast.makeText(LoginToDeezerActivity.this, "dialog error", 1).show();
+            Toast.makeText(LoginToDeezerActivity.this, "dialog error", 0).show();
 
         }//met
 
         @Override
         public void onCancel() {
-            Toast.makeText(LoginToDeezerActivity.this, "cancel", 1).show();
+            Toast.makeText(LoginToDeezerActivity.this, "cancel", 0).show();
 
         }//met
 
         @Override
         public void onOAuthException(OAuthException oAuthException) {
-            Toast.makeText(LoginToDeezerActivity.this, "Exception", 1).show();
+            Toast.makeText(LoginToDeezerActivity.this, "Exception", 0).show();
 
         }//met
     }//inner class

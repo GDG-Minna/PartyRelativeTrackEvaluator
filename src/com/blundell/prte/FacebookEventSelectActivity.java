@@ -1,5 +1,6 @@
 package com.blundell.prte;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -44,7 +45,10 @@ public class FacebookEventSelectActivity extends PrteActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Event event = events.get(position);
-                        Toast.makeText(getApplicationContext(), event.getId() + " You Clicked " + event.getName(), 1).show();
+                        Toast.makeText(getApplicationContext(), event.getId() + " You Clicked " + event.getName(), 0).show();
+
+                        Intent intent = new Intent(FacebookEventSelectActivity.this, MatchEventWithDeezerHistoryActivity.class);
+                        startActivity(intent);
                     }
                 });
 
