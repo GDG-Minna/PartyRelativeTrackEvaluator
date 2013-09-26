@@ -23,7 +23,7 @@ public class MainActivity extends PrteActivity {
     }
 
     public void onSignInWithFacebookClick(View button) {
-        Intent intent = new Intent(this, SignUpWithFacebookActiivty.class);
+        Intent intent = new Intent(this, LoginWithFacebookActiivty.class);
         startActivity(intent);
     }
 

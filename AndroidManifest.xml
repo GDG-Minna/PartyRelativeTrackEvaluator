@@ -27,7 +27,7 @@
 
     <activity
       android:label="@string/label_login"
-      android:name="com.blundell.prte.SignUpWithFacebookActiivty" />
+      android:name=".LoginWithFacebookActiivty" />
 
     <activity
       android:label="@string/label_event_select"

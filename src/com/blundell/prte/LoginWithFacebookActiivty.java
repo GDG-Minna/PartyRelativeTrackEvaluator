@@ -11,7 +11,7 @@ import com.parse.ParseUser;
 
 import java.util.Arrays;
 
-public class SignUpWithFacebookActiivty extends PrteActivity {
+public class LoginWithFacebookActiivty extends PrteActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
