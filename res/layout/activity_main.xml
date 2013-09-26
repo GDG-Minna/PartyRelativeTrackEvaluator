@@ -8,5 +8,13 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:text="Hello World, MainActivity" />
+
+
+  <Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Sign In with Facebook"
+    android:onClick="onSignInWithFacebookClick" />
+
 </LinearLayout>
 
