@@ -20,7 +20,7 @@ public class EventResponseParser {
                 JSONObject jsonObject = data.getJSONObject(i);
 
                 String name = jsonObject.getString("name");
-                int id = jsonObject.getInt("id");
+                long id = jsonObject.getLong("id");
                 String startTime = jsonObject.getString("start_time");
                 String endTime = jsonObject.getString("end_time");
 

@@ -32,7 +32,7 @@ public class MatchEventWithDeezerHistoryActivity extends PrteActivity {
         deezerConnect.requestAsync(deezerRequest, new RequestListener() {
             @Override
             public void onComplete(String response, Object requestId) {
-                popToastOnUiThread("COMPLETE");
+                popToastOnUiThread("Music History/ COMPLETE");
 //                Log.d("MatchEvent", response);
 
                 List<Song> songs = new DeezerHistoryParser().parse(response);
@@ -48,25 +48,25 @@ public class MatchEventWithDeezerHistoryActivity extends PrteActivity {
 
             @Override
             public void onIOException(IOException e, Object requestId) {
-                popToastOnUiThread("IO EXc");
+                popToastOnUiThread("Music History/ IO EXc");
 
             }
 
             @Override
             public void onMalformedURLException(MalformedURLException e, Object requestId) {
-                popToastOnUiThread("Maluformed url");
+                popToastOnUiThread("Music History/ Maluformed url");
 
             }
 
             @Override
             public void onOAuthException(OAuthException e, Object requestId) {
-                popToastOnUiThread("OAuth Excp");
+                popToastOnUiThread("Music History/ OAuth Excp");
 
             }
 
             @Override
             public void onDeezerError(DeezerError deezerError, Object o) {
-                popToastOnUiThread("Deezer Error");
+                popToastOnUiThread("Music History/ Deezer Error");
 
             }
         });

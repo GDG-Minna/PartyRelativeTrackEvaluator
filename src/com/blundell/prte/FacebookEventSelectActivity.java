@@ -27,13 +27,13 @@ public class FacebookEventSelectActivity extends PrteActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_select_facebook);
 
-        Toast.makeText(this, "LOADING", 1).show();
+        Toast.makeText(this, "LOADING", 0).show();
 
         Request request = new Request(ParseFacebookUtils.getSession(), "/me/events");
         request.setCallback(new Request.Callback() {
             @Override
             public void onCompleted(Response response) {
-                Log.d("FEV", response.toString());
+                Log.d("MatchEvent", "/me/events" + response.toString());
 
                 ListView listView = (ListView) findViewById(R.id.select_list);
 
@@ -48,7 +48,7 @@ public class FacebookEventSelectActivity extends PrteActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Event event = events.get(position);
-                        Toast.makeText(getApplicationContext(), event.getId() + " You Clicked " + event.getName(), 0).show();
+                        Log.d("MatchEvent", event.getId() + " You Clicked " + event.getName());
 
                         ParseUser currentUser = ParseUser.getCurrentUser();
                         currentUser.put("SELECTED_EVENT", event);

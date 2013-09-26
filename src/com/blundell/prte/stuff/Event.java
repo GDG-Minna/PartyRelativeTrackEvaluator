@@ -17,11 +17,11 @@ public class Event extends ParseObject {
         return this;
     }
 
-    public int getId() {
-        return getInt("id");
+    public long getId() {
+        return getLong("id");
     }
 
-    public Event setId(int id) {
+    public Event setId(long id) {
         put("id", id);
         return this;
     }
