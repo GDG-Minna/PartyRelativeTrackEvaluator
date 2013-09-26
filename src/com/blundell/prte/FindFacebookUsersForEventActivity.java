@@ -4,10 +4,14 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.blundell.prte.stuff.Event;
+import com.blundell.prte.stuff.User;
+import com.blundell.prte.stuff.UserListResponseParser;
 import com.facebook.Request;
 import com.facebook.Response;
 import com.parse.ParseFacebookUtils;
 import com.parse.ParseUser;
+
+import java.util.List;
 
 public class FindFacebookUsersForEventActivity extends PrteActivity {
 
@@ -25,6 +29,11 @@ public class FindFacebookUsersForEventActivity extends PrteActivity {
             public void onCompleted(Response response) {
                 Log.d("MatchEvent", "/invited: " + response.toString());
 
+                List<User> userList = new UserListResponseParser().parse(response);
+
+                for (User user : userList) {
+                    Log.d("MatchEvent", "Found user : " + user.toString());
+                }
             }
         });
         request.executeAsync();

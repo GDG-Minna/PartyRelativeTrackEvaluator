@@ -44,6 +44,7 @@ public class MatchEventWithDeezerHistoryActivity extends PrteActivity {
 
                 Intent intent = new Intent(MatchEventWithDeezerHistoryActivity.this, FindFacebookUsersForEventActivity.class);
                 startActivity(intent);
+                finish();
             }
 
             @Override
