@@ -5,7 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.blundell.prte.stuff.WithingsAcc;
+import com.blundell.prte.base.PrteActivity;
+import com.blundell.prte.domain.WithingsAcc;
 import com.parse.ParseUser;
 
 import java.io.IOException;

@@ -1,5 +1,7 @@
 package com.blundell.prte.stuff;
 
+import com.blundell.prte.domain.Song;
+
 import java.util.ArrayList;
 import java.util.List;
 

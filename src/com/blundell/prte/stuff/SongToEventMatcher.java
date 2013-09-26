@@ -1,5 +1,8 @@
 package com.blundell.prte.stuff;
 
+import com.blundell.prte.domain.Event;
+import com.blundell.prte.domain.Song;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

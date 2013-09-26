@@ -3,8 +3,9 @@ package com.blundell.prte;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.blundell.prte.stuff.Event;
-import com.blundell.prte.stuff.User;
+import com.blundell.prte.base.PrteActivity;
+import com.blundell.prte.domain.Event;
+import com.blundell.prte.domain.User;
 import com.blundell.prte.stuff.UserListResponseParser;
 import com.facebook.Request;
 import com.facebook.Response;

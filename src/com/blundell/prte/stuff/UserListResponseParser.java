@@ -1,5 +1,6 @@
 package com.blundell.prte.stuff;
 
+import com.blundell.prte.domain.User;
 import com.facebook.Response;
 
 import java.util.ArrayList;

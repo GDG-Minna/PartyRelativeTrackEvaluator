@@ -15,7 +15,7 @@
   <application
     android:label="@string/app_name"
     android:icon="@drawable/ic_launcher"
-    android:name=".PrteApplication">
+    android:name=".base.PrteApplication">
     <activity
       android:name="com.blundell.prte.MainActivity"
       android:label="@string/label_main">

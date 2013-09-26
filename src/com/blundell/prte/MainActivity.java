@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.blundell.prte.base.PrteActivity;
+
 public class MainActivity extends PrteActivity {
 
     @Override

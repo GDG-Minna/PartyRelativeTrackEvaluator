@@ -1,4 +1,4 @@
-package com.blundell.prte.stuff;
+package com.blundell.prte.domain;
 
 import com.parse.ParseClassName;
 import com.parse.ParseObject;

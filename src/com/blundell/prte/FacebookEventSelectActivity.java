@@ -9,7 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.blundell.prte.stuff.Event;
+import com.blundell.prte.base.PrteActivity;
+import com.blundell.prte.domain.Event;
 import com.blundell.prte.stuff.EventResponseParser;
 import com.facebook.Request;
 import com.facebook.Response;

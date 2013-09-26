@@ -1,9 +1,10 @@
-package com.blundell.prte;
+package com.blundell.prte.base;
 
 import android.app.Application;
 
-import com.blundell.prte.stuff.Event;
-import com.blundell.prte.stuff.WithingsAcc;
+import com.blundell.prte.R;
+import com.blundell.prte.domain.Event;
+import com.blundell.prte.domain.WithingsAcc;
 import com.parse.Parse;
 import com.parse.ParseFacebookUtils;
 import com.parse.ParseObject;

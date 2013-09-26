@@ -3,6 +3,7 @@ package com.blundell.prte;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.blundell.prte.base.PrteActivity;
 import com.deezer.sdk.*;
 import com.parse.ParseUser;
 

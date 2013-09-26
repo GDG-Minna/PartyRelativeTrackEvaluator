@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.blundell.prte.base.PrteActivity;
 import com.blundell.prte.stuff.DeezerHistoryParser;
-import com.blundell.prte.stuff.Event;
-import com.blundell.prte.stuff.Song;
+import com.blundell.prte.domain.Event;
+import com.blundell.prte.domain.Song;
 import com.blundell.prte.stuff.SongToEventMatcher;
 import com.deezer.sdk.*;
 import com.parse.ParseUser;

@@ -1,4 +1,4 @@
-package com.blundell.prte;
+package com.blundell.prte.base;
 
 import android.app.Activity;
 import android.os.Bundle;
