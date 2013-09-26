@@ -20,8 +20,11 @@ public class EventResponseParser {
                 JSONObject jsonObject = data.getJSONObject(i);
 
                 String name = jsonObject.getString("name");
+                int id = jsonObject.getInt("id");
+                String startTime = jsonObject.getString("start_time");
+                String endTime = jsonObject.getString("end_time");
 
-                events.add(new Event().setName(name));
+                events.add(new Event().setName(name).setId(id).setStartTime(startTime).setEndTime(endTime));
             }
 
         } catch (JSONException e) {
