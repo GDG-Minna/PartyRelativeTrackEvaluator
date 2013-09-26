@@ -16,5 +16,11 @@
     android:text="Sign In with Facebook"
     android:onClick="onSignInWithFacebookClick" />
 
+  <Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Select your event"
+    android:onClick="onSelectFacebookEventClick" />
+
 </LinearLayout>
 

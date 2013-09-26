@@ -27,4 +27,9 @@ public class MainActivity extends PrteActivity {
         startActivity(intent);
     }
 
+    public void onSelectFacebookEventClick(View button) {
+        Intent intent = new Intent(this, FacebookEventSelectActivity.class);
+        startActivity(intent);
+    }
+
 }
