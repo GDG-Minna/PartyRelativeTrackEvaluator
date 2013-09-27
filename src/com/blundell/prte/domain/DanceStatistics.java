@@ -1,5 +1,6 @@
 package com.blundell.prte.domain;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,5 +31,13 @@ public class DanceStatistics {
     public DanceStatistics add(Song song, Statistics statistics) {
         statisticsMap.put(song, statistics);
         return this;
+    }
+
+    public Collection<Statistics> allStats() {
+        return statisticsMap.values();
+    }
+
+    public User getUser() {
+        return user;
     }
 }
