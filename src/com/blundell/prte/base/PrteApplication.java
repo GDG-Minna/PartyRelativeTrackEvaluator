@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.blundell.prte.R;
 import com.blundell.prte.domain.Event;
+import com.blundell.prte.domain.Song;
 import com.blundell.prte.domain.User;
 import com.blundell.prte.domain.WithingsAcc;
 import com.parse.Parse;
@@ -16,6 +17,7 @@ public class PrteApplication extends Application {
     public void onCreate() {
         super.onCreate();
         ParseObject.registerSubclass(User.class);
+        ParseObject.registerSubclass(Song.class);
         ParseObject.registerSubclass(Event.class);
         ParseObject.registerSubclass(WithingsAcc.class);
         Parse.initialize(this, "LD2xwuid5SqhYTKjzpLw6PBnCA4qgneiQIsB7a5j", "BxuatralMCzNfkabigd3DVV1XdqlOEZugO9Ap5z9");

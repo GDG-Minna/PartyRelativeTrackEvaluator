@@ -6,11 +6,12 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.blundell.prte.base.PrteActivity;
-import com.blundell.prte.stuff.DeezerHistoryParser;
 import com.blundell.prte.domain.Event;
 import com.blundell.prte.domain.Song;
+import com.blundell.prte.stuff.DeezerHistoryParser;
 import com.blundell.prte.stuff.SongToEventMatcher;
 import com.deezer.sdk.*;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 import java.io.IOException;
@@ -42,6 +43,10 @@ public class MatchEventWithDeezerHistoryActivity extends PrteActivity {
                 for (Song song : matchedSongs) {
                     Log.d("MatchEvent", song.toString());
                 }
+
+                ParseObject eventSongs = new ParseObject("EventSongs");
+                eventSongs.addAll("songs", matchedSongs);
+                eventSongs.saveInBackground();
 
                 Intent intent = new Intent(MatchEventWithDeezerHistoryActivity.this, FindFacebookUsersForEventActivity.class);
                 startActivity(intent);

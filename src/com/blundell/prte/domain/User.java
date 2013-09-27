@@ -6,6 +6,9 @@ import com.parse.ParseObject;
 @ParseClassName("User")
 public class User extends ParseObject {
 
+    public User() {
+    }
+
     public String getName() {
         return getString("name");
     }

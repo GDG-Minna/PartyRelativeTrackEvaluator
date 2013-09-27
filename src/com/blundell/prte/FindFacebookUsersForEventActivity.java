@@ -41,6 +41,7 @@ public class FindFacebookUsersForEventActivity extends PrteActivity {
 
                 ParseObject intersectionUsers = new ParseObject("IntersectionUsers");
                 intersectionUsers.addAll("users", userList);
+                intersectionUsers.saveInBackground();
 
                 Intent intent = new Intent(FindFacebookUsersForEventActivity.this, FindWithingsUsersActivity.class);
                 startActivity(intent);

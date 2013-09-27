@@ -61,6 +61,7 @@ public class FindWithingsUsersActivity extends PrteActivity {
 
                     ParseObject intersectionUsers = new ParseObject("IntersectionUsers");
                     intersectionUsers.addAll("users", userList);
+                    intersectionUsers.saveInBackground();
 
                     // TODO save to cloud
 

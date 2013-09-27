@@ -1,59 +1,61 @@
 package com.blundell.prte.domain;
 
-public class Song {
-    int id;
-    String playedAt;
-    String duration;
-    String artist;
-    String title;
+import com.parse.ParseClassName;
+import com.parse.ParseObject;
+
+@ParseClassName("Song")
+public class Song extends ParseObject {
+
+    public Song() {
+    }
 
     public int getId() {
-        return id;
+        return getInt("id");
     }
 
     public Song setId(int id) {
-        this.id = id;
+        put("id", id);
         return this;
     }
 
     public String getPlayedAt() {
-        return playedAt;
+        return getString("playedAt");
     }
 
     public Song setPlayedAt(String playedAt) {
-        this.playedAt = playedAt;
+        put("playedAt", playedAt);
         return this;
     }
 
     public String getDuration() {
-        return duration;
+        return getString("duration");
     }
 
     public Song setDuration(String duration) {
-        this.duration = duration;
+        put("duration", duration);
         return this;
     }
 
     public String getArtist() {
-        return artist;
+        return getString("artist");
     }
 
     public Song setArtist(String artist) {
-        this.artist = artist;
+        put("artist", artist);
         return this;
     }
 
     public String getTitle() {
-        return title;
+        return getString("title");
     }
 
     public Song setTitle(String title) {
-        this.title = title;
+        put("title", title);
         return this;
     }
 
     @Override
     public String toString() {
-        return artist + " : " + title;
+        return getArtist() + " : " + getTitle();
     }
 }
