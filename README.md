@@ -1,12 +1,21 @@
 PRTE! 
 ===========================
 
+Will aggregate your Facebook Events, Deezer Playlist and Withings Friends Activity to give you 
+statistics for fun or to improve your partys!
+<br/>
+Potential to:<br/>
+<br/>
+Show stats of the songs most danced to<br/>
+Invite guests based on how energetic or lazy they are<br/>
+Create automatice playlists dependant on what people are like to dance<br/>
+Tailor your guest list to the music or the music to your guest list<br/>
 
-Deezer sync songs played with time & dance amount</br>
-
-Top 3 songs<br/>
-Top 3 dancers
+![s1](1.png)![s2](2.png)![s3](3.png)
 ____
+
+Hackathon check list
+======
 
 Login with Facebook<br/>
 Login with Deezer<br/>
@@ -20,7 +29,7 @@ Cross match this with friends who have Withings        - DONE<br/>
 Find these users withings events and movements         - DONE<br/>
 Correlate with songs i.e. who danced to what           - DONE<br/>
 Create stats board                                     - DONE<br/>
-    - person danced most<br/>
-    - song most danced to<br/>
+    - person danced most 			       - DONE<br/>
+    - song most danced to			       - DONE<br/>
     - least active<br/>
 Share on Facebook<br/>
