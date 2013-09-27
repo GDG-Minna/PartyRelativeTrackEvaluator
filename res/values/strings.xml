@@ -9,4 +9,5 @@
   <string name="label_match">Match Songs with Event</string>
   <string name="label_find">Find Event Users</string>
   <string name="label_login_withings">Login Withings</string>
+  <string name="label_find_withings_users">Find Withings Users</string>
 </resources>

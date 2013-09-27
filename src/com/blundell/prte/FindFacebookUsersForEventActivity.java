@@ -1,5 +1,6 @@
 package com.blundell.prte;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -35,6 +36,10 @@ public class FindFacebookUsersForEventActivity extends PrteActivity {
                 for (User user : userList) {
                     Log.d("MatchEvent", "Found user : " + user.toString());
                 }
+
+                Intent intent = new Intent(FindFacebookUsersForEventActivity.this, FindWithingsUsersActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
         request.executeAsync();

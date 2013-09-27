@@ -46,6 +46,10 @@
       android:name=".LoginToWithingsActivity" />
 
     <activity
+      android:label="@string/label_find_withings_users"
+      android:name=".FindWithingsUsersActivity" />
+
+    <activity
       android:label="@string/label_find"
       android:name=".FindFacebookUsersForEventActivity" />
 
