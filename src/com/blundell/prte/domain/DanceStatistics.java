@@ -3,6 +3,7 @@ package com.blundell.prte.domain;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class DanceStatistics {
     User user;
@@ -24,13 +25,17 @@ public class DanceStatistics {
         return getStatistics(song).intensity > competitor.getStatistics(song).intensity;
     }
 
-    private Statistics getStatistics(Song song) {
+    public Statistics getStatistics(Song song) {
         return statisticsMap.get(song);
     }
 
     public DanceStatistics add(Song song, Statistics statistics) {
         statisticsMap.put(song, statistics);
         return this;
+    }
+
+    public Set<Song> getSongs() {
+        return statisticsMap.keySet();
     }
 
     public Collection<Statistics> allStats() {

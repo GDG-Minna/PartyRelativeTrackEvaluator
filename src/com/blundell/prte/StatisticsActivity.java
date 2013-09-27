@@ -8,11 +8,13 @@ import com.blundell.prte.base.PrteActivity;
 import com.blundell.prte.base.PrteApplication;
 import com.blundell.prte.domain.DanceStatistics;
 import com.blundell.prte.domain.Event;
+import com.blundell.prte.domain.Song;
 import com.blundell.prte.domain.Statistics;
 import com.parse.ParseUser;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 public class StatisticsActivity extends PrteActivity {
 
@@ -32,7 +34,11 @@ public class StatisticsActivity extends PrteActivity {
         dancedMostTextView.setText(name);
 
         TextView topSongTextView = (TextView) findViewById(R.id.stats_song_most_danced_to);
+        String topSong = whatSongWasDancedToTheMost(danceStatisticsList);
+        topSongTextView.setText(topSong);
+
         TextView leastActivePersonTextView = (TextView) findViewById(R.id.stats_least_active_person);
+
 
     }
 
@@ -51,6 +57,21 @@ public class StatisticsActivity extends PrteActivity {
             }
         }
         return name;
+    }
+
+    private String whatSongWasDancedToTheMost(List<DanceStatistics> danceStatisticsList) {
+        Song mostDancedSong = null;
+        for (DanceStatistics danceStats : danceStatisticsList) {
+            long distance = 0;
+            Set<Song> songs = danceStats.getSongs();
+            for (Song song : songs) {
+                Statistics statistics = danceStats.getStatistics(song);
+                if (statistics.getDistanceCovered() > distance) {
+                    mostDancedSong = song;
+                }
+            }
+        }
+        return (mostDancedSong == null) ? "All of them (or none)!" : mostDancedSong.toString();
     }
 
     public void onShareWithFacebookClick(View button) {
