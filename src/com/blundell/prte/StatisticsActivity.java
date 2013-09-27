@@ -10,6 +10,7 @@ import com.blundell.prte.domain.DanceStatistics;
 import com.blundell.prte.domain.Event;
 import com.blundell.prte.domain.Song;
 import com.blundell.prte.domain.Statistics;
+import com.facebook.widget.FacebookDialog;
 import com.parse.ParseUser;
 
 import java.util.Collection;
@@ -17,6 +18,9 @@ import java.util.List;
 import java.util.Set;
 
 public class StatisticsActivity extends PrteActivity {
+
+    private String personDancedMostName;
+    private String topSong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +34,11 @@ public class StatisticsActivity extends PrteActivity {
         List<DanceStatistics> danceStatisticsList = PrteApplication.danceStatisticsList;
 
         TextView dancedMostTextView = (TextView) findViewById(R.id.stats_who_dance_most);
-        String personDancedMostName = whoDancedTheMost(danceStatisticsList);
+        personDancedMostName = whoDancedTheMost(danceStatisticsList);
         dancedMostTextView.setText(personDancedMostName);
 
         TextView topSongTextView = (TextView) findViewById(R.id.stats_song_most_danced_to);
-        String topSong = whatSongWasDancedToTheMost(danceStatisticsList);
+        topSong = whatSongWasDancedToTheMost(danceStatisticsList);
         topSongTextView.setText(topSong);
 
         TextView leastActivePersonTextView = (TextView) findViewById(R.id.stats_least_active_person);
@@ -79,6 +83,11 @@ public class StatisticsActivity extends PrteActivity {
     }
 
     public void onShareWithFacebookClick(View button) {
+        new FacebookDialog.ShareDialogBuilder(this)
+                .setCaption("Loved the Event, " + personDancedMostName +
+                        " danced the most out of everyone " +
+                        "and everyone was dancing to " + topSong)
+                .build().present();
 
     }
 }
