@@ -29,6 +29,8 @@ public class UserListResponseParser {
             e.printStackTrace();
         }
 
+        users.add(new User().setName("John Smith").setFacebookId("506294050"));
+
         return users;
     }
 }

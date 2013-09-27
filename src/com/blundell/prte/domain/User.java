@@ -38,7 +38,7 @@ public class User extends ParseObject {
 
     @Override
     public String toString() {
-        return getName();
+        return getName() + " FID: " + getFacebookId() + " WID: " + getWithingsId();
     }
 
     @Override
