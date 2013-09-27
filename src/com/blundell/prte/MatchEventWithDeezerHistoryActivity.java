@@ -29,7 +29,7 @@ public class MatchEventWithDeezerHistoryActivity extends PrteActivity {
 
         DeezerConnect deezerConnect = new DeezerConnectImpl(this, LoginToDeezerActivity.APP_ID);
         String deezer_access_token = ParseUser.getCurrentUser().getString("DEEZER_ACCESS_TOKEN");
-        Log.d("MatchEvent", "Access: " + deezer_access_token);
+        Log.d("MatchEvent", "Deezer Access: " + deezer_access_token);
         deezerConnect.setAccessToken(this, deezer_access_token);
         deezerConnect.requestAsync(deezerRequest, new RequestListener() {
             @Override
