@@ -98,6 +98,7 @@ public class LoginToWithingsActivity extends PrteActivity {
                 currentUser.saveInBackground();
 
                 Toast.makeText(LoginToWithingsActivity.this, "SUCCESS", 0).show();
+                finish();
             }
         }.execute("");
     }

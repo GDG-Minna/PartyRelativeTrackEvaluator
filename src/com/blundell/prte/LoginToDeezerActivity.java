@@ -47,6 +47,7 @@ public class LoginToDeezerActivity extends PrteActivity {
             currentUser.put("DEEZER_ACCESS_TOKEN", access_token);
             currentUser.saveInBackground();
             Toast.makeText(LoginToDeezerActivity.this, "SUCCESS", 0).show();
+            finish();
 
         }//met
 
