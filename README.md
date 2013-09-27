@@ -14,11 +14,14 @@ Login with Deezer
 Login with Withings
 
 Select Facebook Event
-	- match with deezer user
-	- match with songs from that timeframe
+	- match with Deezer songs from that timeframe
 
-Find Facebook users who attend event
-Find there withings events and movements
-Match with songs
-individ users upload there stats
-Create leaderboard
+Find Facebook users who attended event
+Cross match this with friends who have Withings
+Find these users withings events and movements
+Correlate with songs i.e. who danced to what
+Create stats board
+    - person danced most
+    - song most danced to
+    - least active
+Share on Facebook

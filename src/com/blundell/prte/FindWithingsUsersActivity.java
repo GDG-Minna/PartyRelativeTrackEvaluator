@@ -63,7 +63,7 @@ public class FindWithingsUsersActivity extends PrteActivity {
                     intersectionUsers.addAll("users", userList);
                     intersectionUsers.saveInBackground();
 
-                    // TODO save to cloud
+
 
                 } catch (IOException e) {
                     e.printStackTrace();
