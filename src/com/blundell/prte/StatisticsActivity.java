@@ -43,6 +43,7 @@ public class StatisticsActivity extends PrteActivity {
 
         TextView leastActivePersonTextView = (TextView) findViewById(R.id.stats_least_active_person);
         String leastActivePersonName = whoWasLeastActive(danceStatisticsList);
+        leastActivePersonTextView.setText(leastActivePersonName);
 
     }
 
