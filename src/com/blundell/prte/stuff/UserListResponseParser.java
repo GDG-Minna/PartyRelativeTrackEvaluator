@@ -20,8 +20,9 @@ public class UserListResponseParser {
                 JSONObject userObject = (JSONObject) userArray.get(i);
 
                 String name = userObject.getString("name");
+                String id = userObject.getString("id");
 
-                users.add(new User().setName(name));
+                users.add(new User().setName(name).setFacebookId(id));
             }
 
         } catch (JSONException e) {

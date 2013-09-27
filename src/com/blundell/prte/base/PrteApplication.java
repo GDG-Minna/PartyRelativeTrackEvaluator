@@ -11,7 +11,14 @@ import com.parse.Parse;
 import com.parse.ParseFacebookUtils;
 import com.parse.ParseObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PrteApplication extends Application {
+
+    public static List<User> facebookUserList = new ArrayList<User>();
+    public static List<User> withingsUserList = new ArrayList<User>();
+    public static List<User> intersectionUserList = new ArrayList<User>();
 
     @Override
     public void onCreate() {

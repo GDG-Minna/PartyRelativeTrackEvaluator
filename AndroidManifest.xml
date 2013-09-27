@@ -50,6 +50,10 @@
       android:name=".FindWithingsUsersActivity" />
 
     <activity
+      android:label="@string/label_join_users"
+      android:name=".JoinUsersActivity" />
+
+    <activity
       android:label="@string/label_find"
       android:name=".FindFacebookUsersForEventActivity" />
 

@@ -22,8 +22,9 @@ public class LeaderboardResponseParser {
                 String firstname = userObject.getString("firstname");
                 String lastname = userObject.getString("lastname");
                 String name = firstname + " " + lastname;
+                String id = userObject.getString("userid");
 
-                users.add(new User().setName(name));
+                users.add(new User().setName(name).setWithingsId(id));
             }
 
         } catch (JSONException e) {

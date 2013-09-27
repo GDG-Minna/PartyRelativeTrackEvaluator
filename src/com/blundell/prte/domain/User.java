@@ -18,6 +18,24 @@ public class User extends ParseObject {
         return this;
     }
 
+    public String getFacebookId() {
+        return getString("facebookId");
+    }
+
+    public User setFacebookId(String facebookId) {
+        put("facebookId", facebookId);
+        return this;
+    }
+
+    public String getWithingsId() {
+        return getString("withingsId");
+    }
+
+    public User setWithingsId(String withingsId) {
+        put("withingsId", withingsId);
+        return this;
+    }
+
     @Override
     public String toString() {
         return getName();

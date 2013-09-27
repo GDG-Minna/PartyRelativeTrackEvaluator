@@ -5,13 +5,13 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.blundell.prte.base.PrteActivity;
+import com.blundell.prte.base.PrteApplication;
 import com.blundell.prte.domain.Event;
 import com.blundell.prte.domain.User;
 import com.blundell.prte.stuff.UserListResponseParser;
 import com.facebook.Request;
 import com.facebook.Response;
 import com.parse.ParseFacebookUtils;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 import java.util.List;
@@ -38,9 +38,7 @@ public class FindFacebookUsersForEventActivity extends PrteActivity {
                     Log.d("MatchEvent", "(FB) Found user : " + user.toString());
                 }
 
-                ParseObject intersectionUsers = new ParseObject("IntersectionUsers");
-                intersectionUsers.addAll("users", userList);
-                intersectionUsers.saveInBackground();
+                PrteApplication.facebookUserList.addAll(userList);
 
                 Intent intent = new Intent(FindFacebookUsersForEventActivity.this, FindWithingsUsersActivity.class);
                 startActivity(intent);

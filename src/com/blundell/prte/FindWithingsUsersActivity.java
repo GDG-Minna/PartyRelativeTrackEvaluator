@@ -1,15 +1,16 @@
 package com.blundell.prte;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.blundell.prte.base.PrteActivity;
+import com.blundell.prte.base.PrteApplication;
 import com.blundell.prte.domain.User;
 import com.blundell.prte.domain.WithingsAcc;
 import com.blundell.prte.stuff.LeaderboardResponseParser;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 import java.io.IOException;
@@ -59,11 +60,11 @@ public class FindWithingsUsersActivity extends PrteActivity {
                         Log.d("MatchEvent", "(WS) Found user : " + user.toString());
                     }
 
-                    ParseObject intersectionUsers = new ParseObject("IntersectionUsers");
-                    intersectionUsers.addAll("users", userList);
-                    intersectionUsers.saveInBackground();
+                    PrteApplication.withingsUserList.addAll(userList);
 
-
+                    Intent intent = new Intent(FindWithingsUsersActivity.this, JoinUsersActivity.class);
+                    startActivity(intent);
+                    finish();
 
                 } catch (IOException e) {
                     e.printStackTrace();
