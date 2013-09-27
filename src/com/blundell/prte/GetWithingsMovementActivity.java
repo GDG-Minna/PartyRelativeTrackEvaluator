@@ -8,10 +8,12 @@ import android.widget.Toast;
 
 import com.blundell.prte.base.PrteActivity;
 import com.blundell.prte.base.PrteApplication;
-import com.blundell.prte.domain.*;
+import com.blundell.prte.domain.DanceStatistics;
+import com.blundell.prte.domain.Movement;
+import com.blundell.prte.domain.Song;
+import com.blundell.prte.domain.User;
 import com.blundell.prte.stuff.MeasureResponseParser;
 import com.blundell.prte.stuff.SongDanceMapper;
-import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,9 +32,9 @@ public class GetWithingsMovementActivity extends PrteActivity {
 
             @Override
             protected List<String> doInBackground(String... params) {
-                Event selectedEvent = (Event) ParseUser.getCurrentUser().get("SELECTED_EVENT");
-                WithingsAcc withingsAcc = (WithingsAcc) ParseUser.getCurrentUser().get("WITHINGS_ACC");
                 List<User> userList = PrteApplication.intersectionUserList;
+//                Event selectedEvent = (Event) ParseUser.getCurrentUser().get("SELECTED_EVENT");
+//                WithingsAcc withingsAcc = (WithingsAcc) ParseUser.getCurrentUser().get("WITHINGS_ACC");
 //                try {
 //                    String uri = "https://hackathon-api.withings.com/v2/measure?action=getwamhf" +
 //                            "&userid=" + user.getWithingsId() +

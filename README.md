@@ -17,9 +17,9 @@ Select Facebook Event                                  - DONE
 
 Find Facebook users who attended event                 - DONE
 Cross match this with friends who have Withings        - DONE
-Find these users withings events and movements
-Correlate with songs i.e. who danced to what
-Create stats board
+Find these users withings events and movements         - DONE
+Correlate with songs i.e. who danced to what           - DONE
+Create stats board                                     - DONE
     - person danced most
     - song most danced to
     - least active

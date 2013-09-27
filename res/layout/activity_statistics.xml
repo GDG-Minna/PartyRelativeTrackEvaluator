@@ -5,4 +5,56 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent">
 
+  <TextView
+    android:id="@+id/stats_event_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dip"
+    android:textSize="26sp" />
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Who Danced the most:"
+    android:textSize="18sp" />
+
+  <TextView
+    android:id="@+id/stats_who_dance_most"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dip"
+    android:textSize="24sp" />
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Song most danced to:"
+    android:textSize="18sp" />
+
+  <TextView
+    android:id="@+id/stats_song_most_danced_to"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dip"
+    android:textSize="24sp" />
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Least Active person:"
+    android:textSize="18sp" />
+
+  <TextView
+    android:id="@+id/stats_least_active_person"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dip"
+    android:textSize="24sp" />
+
+  <Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Share with Facebook?"
+    android:onClick="onShareWithFacebookClick" />
+
 </LinearLayout>
