@@ -34,8 +34,10 @@ public class FindFacebookUsersForEventActivity extends PrteActivity {
                 List<User> userList = new UserListResponseParser().parse(response);
 
                 for (User user : userList) {
-                    Log.d("MatchEvent", "Found user : " + user.toString());
+                    Log.d("MatchEvent", "(FB) Found user : " + user.toString());
                 }
+
+                // TODO save to cloud
 
                 Intent intent = new Intent(FindFacebookUsersForEventActivity.this, FindWithingsUsersActivity.class);
                 startActivity(intent);

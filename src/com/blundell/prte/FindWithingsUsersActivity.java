@@ -6,7 +6,9 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.blundell.prte.base.PrteActivity;
+import com.blundell.prte.domain.User;
 import com.blundell.prte.domain.WithingsAcc;
+import com.blundell.prte.stuff.LeaderboardResponseParser;
 import com.parse.ParseUser;
 
 import java.io.IOException;
@@ -18,8 +20,6 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class FindWithingsUsersActivity extends PrteActivity {
 
@@ -52,14 +52,17 @@ public class FindWithingsUsersActivity extends PrteActivity {
                     String jsonString = convertStreamToString(httpResponse.getEntity().getContent());
                     Log.d("MatchEvent", "getuserslist Response " + jsonString);
 
-                    JSONObject jsonObject = new JSONObject(jsonString);
+                    List<User> userList = new LeaderboardResponseParser().parse(jsonString);
+
+                    for (User user : userList) {
+                        Log.d("MatchEvent", "(WS) Found user : " + user.toString());
+                    }
+
+                    // TODO save to cloud
 
                 } catch (IOException e) {
                     e.printStackTrace();
-                } catch (JSONException e) {
-                    e.printStackTrace();
                 }
-
                 return null;
             }
 
