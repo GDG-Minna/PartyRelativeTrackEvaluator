@@ -12,4 +12,5 @@
   <string name="label_find_withings_users">Find Withings Users</string>
   <string name="label_join_users">Join Users</string>
   <string name="label_withings_movement">Calculate Dance Moves</string>
+  <string name="label_statistics">Event Dance Stats</string>
 </resources>

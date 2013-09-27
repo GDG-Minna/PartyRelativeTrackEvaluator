@@ -1,7 +1,7 @@
 package com.blundell.prte.domain;
 
 class Statistics {
-    long lengthDancedFor;
+    long distanceCovered;
     int caloriesBurned;
     double intensity;
 }

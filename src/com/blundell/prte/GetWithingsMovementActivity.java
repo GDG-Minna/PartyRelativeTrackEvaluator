@@ -1,5 +1,6 @@
 package com.blundell.prte;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -75,6 +76,9 @@ public class GetWithingsMovementActivity extends PrteActivity {
                 super.onPostExecute(strings);
 
                 // Intent to go to final scoreboard screen
+                Intent intent = new Intent(GetWithingsMovementActivity.this, StatisticsActivity.class);
+                startActivity(intent);
+                finish();
 
                 Toast.makeText(GetWithingsMovementActivity.this, "SUCCESS", 0).show();
             }

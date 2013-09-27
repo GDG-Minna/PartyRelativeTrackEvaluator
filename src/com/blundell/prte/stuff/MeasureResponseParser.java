@@ -10,6 +10,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MeasureResponseParser {
+
+    /**
+     * vasistas
+     */
+    // 36 Number of steps in timeframe
+    // 37 elevation in metres
+    // 38 calories burned                      < this
+    // 39intensity                             < this
+    // 40 distance in metres                   < this
+    // 41 descent in metres
+    // 42 subcategory 0 inctive, 1 walk, 2 run
     public List<Dance> parse(String response) {
         List<Dance> dances = new ArrayList<Dance>();
 

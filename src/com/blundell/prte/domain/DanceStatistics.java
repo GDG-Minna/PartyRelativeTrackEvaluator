@@ -12,7 +12,7 @@ public class DanceStatistics {
     }
 
     public boolean hasDancedMore(Song song, DanceStatistics competitor) {
-        return getStatistics(song).lengthDancedFor > competitor.getStatistics(song).lengthDancedFor;
+        return getStatistics(song).distanceCovered > competitor.getStatistics(song).distanceCovered;
     }
 
     public boolean hasBurntMore(Song song, DanceStatistics competitor) {
