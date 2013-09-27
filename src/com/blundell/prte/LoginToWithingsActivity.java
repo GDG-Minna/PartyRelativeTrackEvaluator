@@ -61,7 +61,7 @@ public class LoginToWithingsActivity extends PrteActivity {
                     JSONObject jsonObject = new JSONObject(jsonString);
 
                     JSONObject body = jsonObject.getJSONObject("body");
-                    String userId = body.getJSONArray("account").getJSONObject(0).getString("id");
+                    String userId = body.getJSONArray("users").getJSONObject(0).getString("id");
                     String sessionId = body.getString("sessionid");
                     Log.d("MatchEvent", "Withing Login " + sessionId + "/" + userId);
 
