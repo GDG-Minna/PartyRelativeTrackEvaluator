@@ -32,7 +32,7 @@ public class JoinUsersActivity extends PrteActivity {
         }
         PrteApplication.intersectionUserList.addAll(intermediateList);
         for (User user : intermediateList) {
-            Log.d("MatchEvent", "Match: " + user.toString());
+            Log.d("MatchEvent", "Match on Event & Withings: " + user.toString());
         }
     }
 }
