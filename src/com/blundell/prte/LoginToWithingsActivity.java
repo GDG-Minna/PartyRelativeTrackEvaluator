@@ -41,16 +41,16 @@ public class LoginToWithingsActivity extends PrteActivity {
                     HttpPost request = new HttpPost("https://hackathon-api.withings.com/auth?action=login");
 
                     List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-//                    nameValuePairs.add(new BasicNameValuePair("email", "brighton_11@withings.com"));
-//                    nameValuePairs.add(new BasicNameValuePair("password", "3CjPt9B4M2"));
+                    nameValuePairs.add(new BasicNameValuePair("email", "brighton_11@withings.com"));
+                    nameValuePairs.add(new BasicNameValuePair("password", "3CjPt9B4M2"));
 //                    nameValuePairs.add(new BasicNameValuePair("email", "brighton_12@withings.com"));
 //                    nameValuePairs.add(new BasicNameValuePair("password", "uA69sFtmLa"));
 //                    nameValuePairs.add(new BasicNameValuePair("email", "brighton_13@withings.com"));
 //                    nameValuePairs.add(new BasicNameValuePair("password", "3FLKAiWN0a"));
 //                    nameValuePairs.add(new BasicNameValuePair("email", "brighton_14@withings.com"));
 //                    nameValuePairs.add(new BasicNameValuePair("password", "evVP8W6lNS"));
-                    nameValuePairs.add(new BasicNameValuePair("email", "brighton_15@withings.com"));
-                    nameValuePairs.add(new BasicNameValuePair("password", "4rz6Ob28Rj"));
+//                    nameValuePairs.add(new BasicNameValuePair("email", "brighton_15@withings.com"));
+//                    nameValuePairs.add(new BasicNameValuePair("password", "4rz6Ob28Rj"));
                     request.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
                     HttpResponse httpResponse = httpClient.execute(request);
