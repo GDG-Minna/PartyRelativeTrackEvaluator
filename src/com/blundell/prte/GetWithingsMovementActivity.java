@@ -56,8 +56,8 @@ public class GetWithingsMovementActivity extends PrteActivity {
                 for (int i = 0; i < userList.size(); i++) {
                     String response = stubJsonResponses.size() == i ? stubJsonResponses.get(0) : stubJsonResponses.get(i);
                     Log.d("MatchEvent", "measure Response " + response);
-                    List<Dance> dances = new MeasureResponseParser().parse(response);
-                    DanceStatistics danceStatistics = new SongDanceMapper(userList.get(i)).map(songsForEventList, dances);
+                    List<Movement> movements = new MeasureResponseParser().parse(response);
+                    DanceStatistics danceStatistics = new SongDanceMapper(userList.get(i)).map(songsForEventList, movements);
                     danceStatisticsList.add(danceStatistics);
                 }
                 PrteApplication.danceStatisticsList.clear();

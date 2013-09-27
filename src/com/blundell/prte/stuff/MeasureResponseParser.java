@@ -1,6 +1,6 @@
 package com.blundell.prte.stuff;
 
-import com.blundell.prte.domain.Dance;
+import com.blundell.prte.domain.Movement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +21,8 @@ public class MeasureResponseParser {
     // 40 distance in metres                   < this
     // 41 descent in metres
     // 42 subcategory 0 inctive, 1 walk, 2 run
-    public List<Dance> parse(String response) {
-        List<Dance> dances = new ArrayList<Dance>();
+    public List<Movement> parse(String response) {
+        List<Movement> movements = new ArrayList<Movement>();
 
         try {
             JSONObject jsonObject = new JSONObject(response).getJSONObject("body").getJSONArray("series").getJSONObject(0);
@@ -30,10 +30,15 @@ public class MeasureResponseParser {
             JSONArray typesArray = jsonObject.getJSONArray("types");
             JSONArray dataArray = jsonObject.getJSONArray("vasistas");
 
+            for (int i = 0; i < timesArray.length(); i++) {
+
+
+            }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        return dances;
+        return movements;
     }
 }

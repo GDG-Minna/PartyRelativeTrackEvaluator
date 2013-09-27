@@ -1,6 +1,6 @@
 package com.blundell.prte.stuff;
 
-import com.blundell.prte.domain.Dance;
+import com.blundell.prte.domain.Movement;
 import com.blundell.prte.domain.DanceStatistics;
 import com.blundell.prte.domain.Song;
 import com.blundell.prte.domain.User;
@@ -14,7 +14,7 @@ public class SongDanceMapper {
         this.user = user;
     }
 
-    public DanceStatistics map(List<Song> song, List<Dance> dances) {
+    public DanceStatistics map(List<Song> song, List<Movement> movements) {
         return new DanceStatistics(user);
     }
 }
