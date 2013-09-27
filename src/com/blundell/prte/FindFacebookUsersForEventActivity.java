@@ -11,6 +11,7 @@ import com.blundell.prte.stuff.UserListResponseParser;
 import com.facebook.Request;
 import com.facebook.Response;
 import com.parse.ParseFacebookUtils;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 import java.util.List;
@@ -33,11 +34,13 @@ public class FindFacebookUsersForEventActivity extends PrteActivity {
 
                 List<User> userList = new UserListResponseParser().parse(response);
 
+                // TODO save to cloud
                 for (User user : userList) {
                     Log.d("MatchEvent", "(FB) Found user : " + user.toString());
                 }
 
-                // TODO save to cloud
+                ParseObject intersectionUsers = new ParseObject("IntersectionUsers");
+                intersectionUsers.addAll("users", userList);
 
                 Intent intent = new Intent(FindFacebookUsersForEventActivity.this, FindWithingsUsersActivity.class);
                 startActivity(intent);

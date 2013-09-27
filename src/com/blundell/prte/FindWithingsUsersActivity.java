@@ -9,6 +9,7 @@ import com.blundell.prte.base.PrteActivity;
 import com.blundell.prte.domain.User;
 import com.blundell.prte.domain.WithingsAcc;
 import com.blundell.prte.stuff.LeaderboardResponseParser;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 import java.io.IOException;
@@ -57,6 +58,9 @@ public class FindWithingsUsersActivity extends PrteActivity {
                     for (User user : userList) {
                         Log.d("MatchEvent", "(WS) Found user : " + user.toString());
                     }
+
+                    ParseObject intersectionUsers = new ParseObject("IntersectionUsers");
+                    intersectionUsers.addAll("users", userList);
 
                     // TODO save to cloud
 
