@@ -1,7 +1,9 @@
 package com.blundell.prte;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.blundell.prte.base.PrteActivity;
 import com.blundell.prte.base.PrteApplication;
@@ -30,9 +32,23 @@ public class JoinUsersActivity extends PrteActivity {
 
             }
         }
+
         PrteApplication.intersectionUserList.addAll(intermediateList);
+        PrteApplication.withingsUserList.clear();
+        PrteApplication.facebookUserList.clear();
         for (User user : intermediateList) {
             Log.d("MatchEvent", "Match on Event & Withings: " + user.toString());
         }
+
+        if (intermediateList.isEmpty()) {
+            Toast.makeText(this, "No one with Withings went to the Event :-(", 1).show();
+            return;
+        }
+
+        Toast.makeText(this, "Withings party goers found!", 0).show();
+
+        Intent intent = new Intent(JoinUsersActivity.this, GetWithingsMovementActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
