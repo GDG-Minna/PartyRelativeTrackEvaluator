@@ -97,7 +97,7 @@ public class LoginToWithingsActivity extends PrteActivity {
                 currentUser.put("WITHINGS_ACC", withingsAcc);
                 currentUser.saveInBackground();
 
-                Toast.makeText(LoginToWithingsActivity.this, "SUCCESS", 0).show();
+                Toast.makeText(LoginToWithingsActivity.this, "Withings Login SUCCESS", 0).show();
                 finish();
             }
         }.execute("");

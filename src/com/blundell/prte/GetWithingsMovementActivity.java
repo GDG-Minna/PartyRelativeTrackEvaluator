@@ -33,7 +33,7 @@ public class GetWithingsMovementActivity extends PrteActivity {
             @Override
             protected List<String> doInBackground(String... params) {
                 List<User> userList = PrteApplication.intersectionUserList;
-//                Event selectedEvent = (Event) ParseUser.getCurrentUser().get("SELECTED_EVENT");
+//                Event selectedEvent = (Event) ParseUser.getCurrentUser(). get("SELECTED_EVENT");
 //                WithingsAcc withingsAcc = (WithingsAcc) ParseUser.getCurrentUser().get("WITHINGS_ACC");
 //                try {
 //                    String uri = "https://hackathon-api.withings.com/v2/measure?action=getwamhf" +
@@ -56,7 +56,7 @@ public class GetWithingsMovementActivity extends PrteActivity {
                 // API FAIL - using stub data
                 List<DanceStatistics> danceStatisticsList = new ArrayList<DanceStatistics>();
                 for (int i = 0; i < userList.size(); i++) {
-                    String response = stubJsonResponses.size() == i ? stubJsonResponses.get(0) : stubJsonResponses.get(i);
+                    String response = stubJsonResponses.size() <= i ? stubJsonResponses.get(0) : stubJsonResponses.get(i);
                     Log.d("MatchEvent", "measure Response " + response);
                     List<Movement> movements = new MeasureResponseParser().parse(response);
                     DanceStatistics danceStatistics = new SongDanceMapper(userList.get(i)).map(songsForEventList, movements);
@@ -82,7 +82,7 @@ public class GetWithingsMovementActivity extends PrteActivity {
                 startActivity(intent);
                 finish();
 
-                Toast.makeText(GetWithingsMovementActivity.this, "SUCCESS", 0).show();
+                Toast.makeText(GetWithingsMovementActivity.this, "Retrieved Guests Movements - SUCCESS", 0).show();
             }
         }.execute("");
     }
