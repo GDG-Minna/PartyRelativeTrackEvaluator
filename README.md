@@ -11,7 +11,7 @@ Invite guests based on how energetic or lazy they are<br/>
 Create automatice playlists dependant on what people are like to dance<br/>
 Tailor your guest list to the music or the music to your guest list<br/>
 
-![s1](1.png)![s2](2.png)![s3](3.png)
+![s1](1.png) ' ![s2](2.png) ' ![s3](3.png)
 ____
 
 Hackathon check list
