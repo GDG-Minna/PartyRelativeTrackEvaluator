@@ -26,4 +26,9 @@ public class DanceStatistics {
     private Statistics getStatistics(Song song) {
         return statisticsMap.get(song);
     }
+
+    public DanceStatistics add(Song song, Statistics statistics) {
+        statisticsMap.put(song, statistics);
+        return this;
+    }
 }
