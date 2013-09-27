@@ -30,15 +30,15 @@ public class StatisticsActivity extends PrteActivity {
         List<DanceStatistics> danceStatisticsList = PrteApplication.danceStatisticsList;
 
         TextView dancedMostTextView = (TextView) findViewById(R.id.stats_who_dance_most);
-        String name = whoDancedTheMost(danceStatisticsList);
-        dancedMostTextView.setText(name);
+        String personDancedMostName = whoDancedTheMost(danceStatisticsList);
+        dancedMostTextView.setText(personDancedMostName);
 
         TextView topSongTextView = (TextView) findViewById(R.id.stats_song_most_danced_to);
         String topSong = whatSongWasDancedToTheMost(danceStatisticsList);
         topSongTextView.setText(topSong);
 
         TextView leastActivePersonTextView = (TextView) findViewById(R.id.stats_least_active_person);
-
+        String leastActivePersonName = whoWasLeastActive(danceStatisticsList);
 
     }
 
@@ -72,6 +72,10 @@ public class StatisticsActivity extends PrteActivity {
             }
         }
         return (mostDancedSong == null) ? "All of them (or none)!" : mostDancedSong.toString();
+    }
+
+    private String whoWasLeastActive(List<DanceStatistics> danceStatisticsList) {
+        return "Paul Blundell";
     }
 
     public void onShareWithFacebookClick(View button) {
