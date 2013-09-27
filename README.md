@@ -1,8 +1,8 @@
 PRTE! 
 ===========================
 
-Will aggregate your Facebook Events, Deezer Playlist and Withings Friends Activity to give you 
-statistics for fun or to improve your partys!
+Will aggregate your **Facebook** Events, **Deezer** Playlist and **Withings** Friends Activity to give you 
+statistics for fun or to improve your partys! Uses **Parse** for auth token storage and user management.
 <br/>
 Potential to:<br/>
 <br/>
@@ -11,8 +11,18 @@ Invite guests based on how energetic or lazy they are<br/>
 Create automatice playlists dependant on what people are like to dance<br/>
 Tailor your guest list to the music or the music to your guest list<br/>
 
-![s1](1.png)![s2](2.png)![s3](3.png)
+![s1](1.png) ' ![s2](2.png) ' ![s3](3.png)
 ____
+
+APIs Used:
+
+Withings API : https://hackathon.withings.com/
+
+Deezer API: http://developers.deezer.com/api/explorer
+
+Facebook API: https://developers.facebook.com/docs/reference/api/
+
+Parse API https://www.parse.com/docs/android_guide
 
 Hackathon check list
 ======
