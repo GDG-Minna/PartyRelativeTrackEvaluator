@@ -3,10 +3,7 @@ package com.blundell.prte.base;
 import android.app.Application;
 
 import com.blundell.prte.R;
-import com.blundell.prte.domain.Event;
-import com.blundell.prte.domain.Song;
-import com.blundell.prte.domain.User;
-import com.blundell.prte.domain.WithingsAcc;
+import com.blundell.prte.domain.*;
 import com.parse.Parse;
 import com.parse.ParseFacebookUtils;
 import com.parse.ParseObject;
@@ -19,6 +16,8 @@ public class PrteApplication extends Application {
     public static List<User> facebookUserList = new ArrayList<User>();
     public static List<User> withingsUserList = new ArrayList<User>();
     public static List<User> intersectionUserList = new ArrayList<User>();
+    public static List<Song> songsForEventList = new ArrayList<Song>();
+    public static List<DanceStatistics> danceStatisticsList = new ArrayList<DanceStatistics>();
 
     @Override
     public void onCreate() {

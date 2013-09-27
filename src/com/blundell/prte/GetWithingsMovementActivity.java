@@ -7,11 +7,12 @@ import android.widget.Toast;
 
 import com.blundell.prte.base.PrteActivity;
 import com.blundell.prte.base.PrteApplication;
-import com.blundell.prte.domain.Event;
-import com.blundell.prte.domain.User;
-import com.blundell.prte.domain.WithingsAcc;
+import com.blundell.prte.domain.*;
+import com.blundell.prte.stuff.MeasureResponseParser;
+import com.blundell.prte.stuff.SongDanceMapper;
 import com.parse.ParseUser;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -48,12 +49,18 @@ public class GetWithingsMovementActivity extends PrteActivity {
 //                } catch (IOException e) {
 //                    e.printStackTrace();
 //                }
+                List<Song> songsForEventList = PrteApplication.songsForEventList;
                 // API FAIL - using stub data
+                List<DanceStatistics> danceStatisticsList = new ArrayList<DanceStatistics>();
                 for (int i = 0; i < userList.size(); i++) {
                     String response = stubJsonResponses.size() == i ? stubJsonResponses.get(0) : stubJsonResponses.get(i);
                     Log.d("MatchEvent", "measure Response " + response);
-
+                    List<Dance> dances = new MeasureResponseParser().parse(response);
+                    DanceStatistics danceStatistics = new SongDanceMapper(userList.get(i)).map(songsForEventList, dances);
+                    danceStatisticsList.add(danceStatistics);
                 }
+                PrteApplication.danceStatisticsList.clear();
+                PrteApplication.danceStatisticsList.addAll(danceStatisticsList);
 
                 return null;
             }
@@ -66,6 +73,8 @@ public class GetWithingsMovementActivity extends PrteActivity {
             @Override
             protected void onPostExecute(List<String> strings) {
                 super.onPostExecute(strings);
+
+                // Intent to go to final scoreboard screen
 
                 Toast.makeText(GetWithingsMovementActivity.this, "SUCCESS", 0).show();
             }

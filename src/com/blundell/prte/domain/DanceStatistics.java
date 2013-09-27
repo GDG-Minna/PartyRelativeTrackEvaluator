@@ -7,10 +7,8 @@ public class DanceStatistics {
     User user;
     Map<Song, Statistics> statisticsMap = new HashMap<Song, Statistics>();
 
-    private class Statistics {
-        long lengthDancedFor;
-        int caloriesBurned;
-        double intensity;
+    public DanceStatistics(User user) {
+        this.user = user;
     }
 
     public boolean hasDancedMore(Song song, DanceStatistics competitor) {
